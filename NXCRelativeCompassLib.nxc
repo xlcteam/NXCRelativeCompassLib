@@ -1,0 +1,24 @@
+// NXC Relative Comppas library by XLC Team, 2013
+
+int compass_start = NULL;
+byte compass_port = NULL;
+
+void NRC_set_compass_port(byte port)
+{
+    compass_port = port;
+}
+
+void NRC_set_north()
+{
+    compass_start = SensorHTCompass(compass_port);   
+}
+
+int NRC_get_current_raw()
+{
+    return SensorHTCompass(compass_port);
+}
+
+int NRC_get_current_diff()
+{
+    return ((360 - compass_start + NRC_get_current_raw()) % 360);
+}
