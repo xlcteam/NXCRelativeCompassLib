@@ -1,7 +1,7 @@
 // NXC Relative Comppas library by XLC Team, 2013
 
-int compass_start = NULL;
-byte compass_port = NULL;
+int compass_start;
+byte compass_port;
 
 void NRC_set_compass_port(byte port)
 {

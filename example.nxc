@@ -1,0 +1,12 @@
+#include "NXCRelativeCompassLib.nxc"
+
+task main()
+{
+  NRC_set_compass_port(IN_1);
+  
+  while (1){
+    NumOut(0, LCD_LINE1, NRC_get_current_raw());
+    ClearScreen();
+    Wait(30);
+  }
+}
