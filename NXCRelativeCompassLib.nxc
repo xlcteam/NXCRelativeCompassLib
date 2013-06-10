@@ -21,7 +21,7 @@ int NRC_get_current_raw()
 
 int NRC_get_angle()
 {
-    int relative_angle = (NRC_get_current_raw() - compass_north + 360) % 360
+    int relative_angle = (NRC_get_current_raw() - compass_north + 360) % 360;
     
     if (relative_angle < 0)
         relative_angle += 360;
