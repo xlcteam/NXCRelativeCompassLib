@@ -7,11 +7,11 @@ task main()
   NRC_set_north();
   
   while (1){
-    TextOut(0, LCD_LINE1, "Current:    ");
+    //TextOut(0, LCD_LINE1, "Current:    ");
     NumOut(50, LCD_LINE1, NRC_get_current_raw(), true);
     
-    TextOut(0, LCD_LINE2, "Angle:    ");
-    NumOut(40, LCD_LINE2, NRC_get_angle(), true);
-    Wait(30);
+    //TextOut(0, LCD_LINE2, "Angle:    ");
+    //NumOut(40, LCD_LINE2, NRC_get_angle(), true);
+    Wait(50);
   }
 }
