@@ -1,27 +1,27 @@
 // NXC Relative Comppas library by XLC Team, 2013
 
-int compass_north;
-byte compass_port;
+int NRC_compass_north;
+byte NRC_compass_port;
 
 void NRC_set_compass_port(byte port)
 {
-    compass_port = port;
-    SetSensorLowspeed(compass_port);
+    NRC_compass_port = port;
+    SetSensorLowspeed(NRC_compass_port);
 }
 
 void NRC_set_north()
 {
-    compass_north = SensorHTCompass(compass_port);
+    NRC_compass_north = SensorHTCompass(compass_port);
 }
 
 int NRC_get_current_raw()
 {
-    return SensorHTCompass(compass_port);
+    return SensorHTCompass(NRC_compass_port);
 }
 
 int NRC_get_angle()
 {
-    int relative_angle = (NRC_get_current_raw() - compass_north + 360) % 360;
+    int relative_angle = (NRC_get_current_raw() - NRC_compass_north + 360) % 360
     
     if (relative_angle < 0)
         relative_angle += 360;
