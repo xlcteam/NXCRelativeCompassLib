@@ -11,7 +11,7 @@ void NRC_set_compass_port(byte port)
 
 void NRC_set_north()
 {
-    NRC_compass_north = SensorHTCompass(compass_port);
+    NRC_compass_north = SensorHTCompass(NRC_compass_port);
 }
 
 int NRC_get_current_raw()
@@ -21,7 +21,7 @@ int NRC_get_current_raw()
 
 int NRC_get_angle()
 {
-    int relative_angle = (NRC_get_current_raw() - NRC_compass_north + 360) % 360
+    int relative_angle = (NRC_get_current_raw() - NRC_compass_north + 360) % 360;
     
     if (relative_angle < 0)
         relative_angle += 360;
